@@ -1,0 +1,16 @@
+when having issue importing aar in android(native) part of flutter plugin, what to do is to convert aar to a jar file
+by following steps below:
+1 - change aar extension to zip
+2 - unzip the library an copy classes.jar file to android/libs folder of the project which is way easier to import
+3 - then in the dependencies session of ur gradle add
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+4 - build or run and u are good to go
+
+
+[to fix: open flutter project as android project result in a lot of Unresolved references]
+this link below helped a lot
+
+leads to this => https://github.com/flutter/flutter/issues/19830
+
+by following steps recommended by [zogol commended on May4, 2023]
+which is also step 2 by [gmackall commented on Aug 22, 2023], check the image
